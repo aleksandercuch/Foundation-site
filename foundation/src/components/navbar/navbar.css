@@ -12,7 +12,7 @@
     transform: translateY(-3em);
     z-index: -1;
     transition: all 0.3s ease 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
-    background: rgba(172, 168, 168, 0.2);
+    background: rgba(238, 236, 236);
 }
 
 .superSubMenu {
@@ -23,7 +23,7 @@
     -webkit-transform: translate(100%,0);
     transform:translate(100%,0);
     display: none;
-    background: rgba(172, 168, 168, 0.2);
+    background: rgba(238, 236, 236);
     border-left: 1px solid #fff;
 }
 .menu:focus .subMenu,
@@ -33,7 +33,7 @@
     opacity: 1;
     z-index: 1;
     transform: translateY(0);
-    transition-delay: 0s, 0s, 0.3s;
+    transition-delay: 0s, 0s, 0.1s;
 }
 
 nav a {
@@ -47,14 +47,6 @@ nav a {
 .subMenu a{
     padding: 15px 30px;
     font-family: roboto;
-}
-
-.aboutMenu a{
-    width: 55%;
-}
-
-.readaptationMenu a{
-    width: 73%;
 }
 
 .subMenu a:hover{
@@ -79,14 +71,14 @@ nav > ul {
 nav > ul > li {
     display: inline-block;
     border-left: 1px solid #fff;
-    background:rgba(172, 168, 168, 0.2);
+    background:rgba(238, 236, 236);
 }
 
 nav > ul > li:first-child {
     border-left: none;    
 }
 
-img {
+.oppImage {
     filter: brightness(0.5) ;
     opacity: 0.2;
     width: 100%;
@@ -95,6 +87,7 @@ img {
 
 .subMenu li:hover>.superSubMenu{
     display: block;
+    width:100%;
 }
 
 .subMenu li{

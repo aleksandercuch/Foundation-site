@@ -10,7 +10,6 @@ import Box from '@material-ui/core/Box';
 import ListItem from '@material-ui/core/ListItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import Divider from '@material-ui/core/Divider';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
 const useStyles = makeStyles({
@@ -40,7 +39,7 @@ function subMenuItem(name) {
   )
 }
 
-export default function TemporaryDrawer() {
+export default function smallNavbar() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,

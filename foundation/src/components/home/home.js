@@ -11,23 +11,23 @@ import './home.css';
 
 class Home extends Component {
 
-	render() {
-		return (
-			<Grid
-				container
-				direction="row"
-				justify="center"
-				alignItems="flex-start"
-			>
-				<Grid item xs={12}>
-                    <Carousels />
-                </Grid>
-                <Grid item xs={12}>
-                    
-                </Grid>
-			</Grid>
-		);
-	}
+  render() {
+    return (
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="flex-start"
+      >
+        <Grid item xs={12}>
+          <Carousels />
+        </Grid>
+        <Grid item xs={12}>
+W
+        </Grid>
+      </Grid>
+    );
+  }
 }
 
 export default Home;

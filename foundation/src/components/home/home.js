@@ -7,6 +7,8 @@ import Grid from '@material-ui/core/Grid';
 
 import Carousels from "./carousel"
 
+import './home.css';
+
 class Home extends Component {
 
 	render() {

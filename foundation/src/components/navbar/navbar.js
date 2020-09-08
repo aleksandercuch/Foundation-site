@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import Hidden from '@material-ui/core/Hidden';
 import Box from '@material-ui/core/Box';
@@ -9,6 +10,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 
+import SignedInLink from './signedInLink';
 import SmallNavbar from './smallNavbar';
 import "./navbar.css";
 
@@ -63,6 +65,7 @@ class Navbar extends Component {
 									</Grid>
 									<Grid item md={2} xs={1}>
 										<Hidden mdDown>
+											{!this.props.auth.uid ? (
 											<Grid
 												container
 												direction="row"
@@ -85,6 +88,9 @@ class Navbar extends Component {
 													</Link>
 												</Grid>
 											</Grid>
+											) : (
+												<SignedInLink />
+											)}
 										</Hidden>
 										<Hidden lgUp>
 											<SmallNavbar />
@@ -143,4 +149,10 @@ class Navbar extends Component {
 	}
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+	return {
+	  auth: state.firebase.auth,
+	}
+  };
+  
+  export default connect(mapStateToProps, null)(Navbar);

@@ -132,7 +132,7 @@ class Navbar extends Component {
                       <li class="menu"><NavLink to="/potrzebujesz-wsparcia">POTRZEBUJESZ WSPARCIA?</NavLink></li>
 
                       <li class="menu"><NavLink to="/chcesz-pomoc">CHCESZ POMÓC?</NavLink></li>
-                      <li class="menu"><NavLink to="/blog">BLOG</NavLink></li>
+                      <li class="menu"><NavLink to="/blog/wszystko">BLOG</NavLink></li>
                       <li class="menu"><NavLink to="/kontakt">KONTAKT</NavLink></li>
                     </ul>
                   </nav>

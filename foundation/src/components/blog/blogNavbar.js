@@ -21,9 +21,7 @@ const styles = theme => ({
 });
 
 class BlogNavBar extends Component {
-
   render() {
-
     const { classes } = this.props;
 
     return (

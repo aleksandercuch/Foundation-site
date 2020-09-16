@@ -1,16 +1,16 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/marioplan/node_modules
+/foundation/node_modules
 
 # testing
-/marioplan/coverage
+/foundation/coverage
 
 # production
-/marioplan/build
+/foundation/build
 
 # misc
-/marioplan/.DS_Store
+/foundation/.DS_Store
 .env.local
 .env.development.local
 .env.test.local

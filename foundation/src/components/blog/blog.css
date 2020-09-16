@@ -2,3 +2,28 @@
     height: auto;
     width: 100%;
 }
+
+.cutImage {
+    overflow: hidden;
+    
+    max-height: 380px;
+}
+
+.postFooter {
+    position: absolute;
+    bottom: 0px; 
+}
+
+.postInfo {
+    position: relative;
+ 
+}
+
+.navLink {
+    min-height: 250px;
+    width: 100%;
+}
+
+.padding {
+    padding-left: 15px;
+}

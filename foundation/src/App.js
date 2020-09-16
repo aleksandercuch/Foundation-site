@@ -13,6 +13,7 @@ import NewsPaper from "./components/blog/subpages/newsPaper";
 import Training from "./components/blog/subpages/training";
 import LoginByEmail from "./components/auth/login";
 import RegisterByEmail from "./components/auth/register";
+import AddPost from "./components/blog/addPost/addPost";
 import './App.css';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
             <Route path='/blog/wspomnienia' component={Memories} />
             <Route path='/blog/prasowka' component={NewsPaper} />
             <Route path='/blog/szkolenia' component={Training} />
+            <Route path='/blog/dodaj' component={AddPost} />
             <Route path='/logowanie' component={LoginByEmail} />
             <Route path='/rejestracja' component={RegisterByEmail} />
             <Route path='/' component={Home} /> 

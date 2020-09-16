@@ -65,7 +65,7 @@ class Navbar extends Component {
                   </Grid>
                   <Grid item md={2} xs={1}>
                     <Hidden mdDown>
-                      {!this.props.auth.uid ? (
+                      {!this.props.admin ? (
                         <Grid
                           container
                           direction="row"
@@ -152,6 +152,8 @@ class Navbar extends Component {
 const mapStateToProps = (state) => {
   return {
     auth: state.firebase.auth,
+    admin: state.firebase.profile.admin,
+    profile: state.firebase.profile,
   }
 };
 

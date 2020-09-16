@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom"
+import { connect } from 'react-redux';
+import { compose } from "redux";
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/styles';
+
+import SignedInLink from "../navbar/signedInLink";
 
 const styles = theme => ({
   navLink: {
@@ -21,8 +25,15 @@ const styles = theme => ({
 });
 
 class BlogNavBar extends Component {
+
+  componentDidMount() { 
+    console.log("dupa");
+    console.log(this.props.profile);
+    console.log(this.props.admin);
+    console.log("dupa");
+  }
   render() {
-    const { classes } = this.props;
+    const { classes, admin } = this.props;
 
     return (
       <Box mt={5}>
@@ -136,6 +147,7 @@ class BlogNavBar extends Component {
                 </Grid>
               </Grid>
               <Grid item xs={4}>
+
                 <Grid
                   container
                   direction="row"
@@ -146,11 +158,29 @@ class BlogNavBar extends Component {
                     <TextField size="small" id="outlined-basic" label="Szukaj" variant="outlined" />
                   </Grid>
                   <Grid item xs={5}>
-                    <NavLink to="zdjecia" className={classes.navLink}>
-                      <Button variant="outlined" color="primary" className={classes.button}>
-                        Zaloguj/Zarejestruj
-                    </Button>
-                    </NavLink>
+                    {!this.props.auth ? (
+                      <NavLink to="zdjecia" className={classes.navLink}>
+                        <Button variant="outlined" color="primary" className={classes.button}>
+                          Zaloguj/Zarejestruj
+                        </Button>
+                      </NavLink>
+                    ) : (
+                        <Grid>
+                          {this.props.profile && (
+                            <Grid>
+                              {admin ? (
+                                <NavLink to="/blog/dodaj" className={classes.navLink}>
+                                  <Button variant="outlined" color="primary" className={classes.button}>
+                                    Napisz post
+                                  </Button>
+                                </NavLink>
+                              ) : (
+                                  <SignedInLink />
+                                )}
+                            </Grid>
+                          )}
+                        </Grid>
+                      )}
                   </Grid>
                 </Grid>
               </Grid>
@@ -162,4 +192,12 @@ class BlogNavBar extends Component {
   }
 }
 
-export default withStyles(styles)(BlogNavBar);
+const mapStateToProps = (state) => {
+  return {
+    admin: state.firebase.profile.admin,
+    profile: state.firebase.profile,
+    auth: state.firebase.auth
+  }
+};
+
+export default compose(connect(mapStateToProps, null))(withStyles(styles)(BlogNavBar));
